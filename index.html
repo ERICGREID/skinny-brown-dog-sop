@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skinny Brown Dog Media – SOP Flipbook</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 2rem;
+    }
+
+    .flipbook {
+      max-width: 850px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #1e3a5f;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .nav-buttons button {
+      background-color: #1e3a5f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .box {
+      background-color: #e8edf3;
+      border-left: 6px solid #1e3a5f;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="flipbook">
+    <h1>Skinny Brown Dog Media</h1>
+    <p><strong>Publishing System SOP Flipbook</strong></p>
+    <p>A comprehensive operations guide for scalable, high-quality author support.</p>
+
+    <div id="pages">
+      <div class="page active"><h2>Introduction & Overview</h2><div class="box">Welcome to the Skinny Brown Dog Media Publishing System SOP. This guide outlines our full workflow and quality systems for scalable indie publishing.</div></div>
+      <div class="page"><h2>Author Onboarding Process</h2><p>Includes intake form, publishing agreement, tax forms, and marketing questionnaire.</p></div>
+      <div class="page"><h2>BookVault Setup & Management</h2><p>Grant correct access, complete metadata, and guide authors through Stripe Connect setup.</p></div>
+      <div class="page"><h2>IngramSpark Setup & Management</h2><p>Configure titles, disable expanded distribution, enable global reach. Check discounts.</p></div>
+      <div class="page"><h2>KDP Setup & Management</h2><p>Guide metadata setup, pricing, promo scheduling, and upload process.</p></div>
+      <div class="page"><h2>File Preparation & Quality Control</h2><p>Use QA checklist before upload. Ensure correct trim, DPI, bleed, and embedded fonts.</p></div>
+      <div class="page"><h2>Author Communication Protocols</h2><p>Weekly updates, milestone confirmations, and use of templates. All comms saved in Drive.</p></div>
+      <div class="page"><h2>Payment Systems & Management</h2><p>Direct author payments via Stripe/PayPal. Use payout tracker to resolve issues.</p></div>
+      <div class="page"><h2>Marketing Support Services</h2><p>Plan using author responses, Promo Planner spreadsheet, and templated outreach.</p></div>
+      <div class="page"><h2>Troubleshooting Common Issues</h2><p>File errors, payout delays, and listing issues. Follow escalation protocol and document steps.</p></div>
+      <div class="page"><h2>Author Exit Process</h2><p>Use exit checklist. Archive files, deliver final assets, and issue rights reversion letter.</p></div>
+      <div class="page"><h2>System Maintenance & Auditing</h2><p>Run quarterly audits with checklist. Validate tool access, templates, and author experience.</p></div>
+      <div class="page"><h2>Resources & Support Contacts</h2><p>Email templates, intake form, proof form, file checklist, promo planner, and contacts for BookVault, IngramSpark, KDP.</p></div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="changePage(-1)">Previous</button>
+      <button onclick="changePage(1)">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll(".page");
+    let currentPage = 0;
+
+    function changePage(direction) {
+      pages[currentPage].classList.remove("active");
+      currentPage = (currentPage + direction + pages.length) % pages.length;
+      pages[currentPage].classList.add("active");
+    }
+  </script>
+</body>
+</html>
